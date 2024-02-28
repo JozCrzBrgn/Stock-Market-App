@@ -6,9 +6,13 @@
     {% if api == "Error... " %}
         There was a problem with your ticket symbol ... please try again.
     {% else %}
-        {% for key, value in api.items %}
-            {{ key }}: {{ value }}<br/>
-        {% endfor %}
+        <h1>{{ api.companyName }}</h1>
+        Price: ${{ api.latestPrice }}<br/>
+        Previous Close: {{ api.previousClose }}<br/>
+        Market Cap: {{ api.marketCap }}<br/>
+        YTD Change: {{ api.ytdChange }}<br/>
+        52WK High: {{ api.week52High }}<br/>
+        52WK Low: {{ api.week52Low }}<br/>
     {% endif %}
 {% endif %}
 
