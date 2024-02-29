@@ -28,18 +28,20 @@
         </tr>
     </thead>
     <tbody>
-        {% for item in  ticker %}
-        <tr>
-            <th scope="row">{{ item }}</th>
-            <td>Mark</th>
-            <td>Otto</th>
-            <td>@mod</th>
-            <td>Mark</th>
-            <td>Otto</th>
-            <td>@mod</th>
-            <td><a href="{% url 'delete' item.id %}">Delete Stock</a></th>
-        </tr>
-        {% endfor %}
+        {% if ticker %}
+            {% for item in  ticker %}
+            <tr>
+                <th scope="row">{{ item }}</th>
+                <td>Mark</th>
+                <td>Otto</th>
+                <td>@mod</th>
+                <td>Mark</th>
+                <td>Otto</th>
+                <td>@mod</th>
+                <td><a href="{% url 'delete' item.id %}">Delete Stock</a></th>
+            </tr>
+            {% endfor %}
+        {% endif %}
     </tbody>
 </table>
 
